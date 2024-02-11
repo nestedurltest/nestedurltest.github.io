@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function redirect()
+            {
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                const addrBase64 = urlParams.get('addr')
+                const addrDecoded = atob(addrBase64)
+                console.log(addrDecoded)
+                window.location.href = addrDecoded
+            }
+        </script>
+    </head>
+    <body>
+        <a onclick="redirect()">Click for redirection</a>
+    </body>
+</html>
