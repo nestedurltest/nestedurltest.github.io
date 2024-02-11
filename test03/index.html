@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function addHyperLink()
+            {
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString);
+                const addrBase64 = urlParams.get('addr')
+                const addrDecoded = atob(addrBase64)
+                console.log(addrDecoded)
+                // window.location.replace(addrDecoded)
+                
+                var hyperLink = document.createElement('a')
+                hyperLink.setAttribute('href', addrDecoded)
+                hyperLink.textContent = 'Click!!!'
+                document.body.appendChild(hyperLink)
+            }
+        </script>
+    </head>
+    <body onload="addHyperLink()"></body>
+</html>
